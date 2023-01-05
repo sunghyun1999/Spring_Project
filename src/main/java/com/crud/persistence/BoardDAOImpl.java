@@ -46,4 +46,10 @@ public class BoardDAOImpl implements BoardDAO {
 		return session.selectList(namespace + ".listAll");
 	}
 
+	@Override
+	public void updateViewCnt(Integer bno) throws Exception {
+		// TODO Auto-generated method stub
+		session.update(namespace + ".updateViewCnt", bno);
+	}
+
 }
