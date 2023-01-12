@@ -5,6 +5,8 @@ import java.util.List;
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.crud.domain.BoardVO;
@@ -12,8 +14,8 @@ import com.crud.domain.BoardVO;
 @Repository
 public class BoardDAOImpl implements BoardDAO {
 
-	@Inject
-	private SqlSession session;
+	@Autowired
+	private SqlSessionTemplate session;
 	private static String namespace = "com.crud.mapper.BoardMapper";
 
 	@Override

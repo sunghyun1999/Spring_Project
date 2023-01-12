@@ -5,8 +5,8 @@
 
 <mapper namespace="com.crud.mapper.BoardMapper">
 	<insert id="create">
-		insert into tbl_board(title, content, writer)
-		values(#{title}, #{content}, #{writer})
+		insert into tbl_board(bno, title, content, writer)
+		values(SEQ_ROW.NEXTVAL, #{title}, #{content}, #{writer})
 	</insert>
 
 	<select id="read" resultType="com.crud.domain.BoardVO">

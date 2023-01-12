@@ -13,14 +13,19 @@
 
 	<!-- Root Context: defines shared resources visible to all other web components -->
 
+	<!-- <bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource"> 
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property> 
+		<property name="url" value="jdbc:mysql://localhost:3306/mydata?characterEncoding=utf8&amp;useSSL=false"></property> 
+		<property name="username" value="root"></property> <property name="password" 
+		value="jsh315518"></property> </bean> -->
 	<bean id="ds"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName"
-			value="com.mysql.jdbc.Driver"></property>
+			value="oracle.jdbc.driver.OracleDriver"></property>
 		<property name="url"
-			value="jdbc:mysql://localhost:3306/mydata?characterEncoding=utf8&amp;useSSL=false"></property>
-		<property name="username" value="root"></property>
-		<property name="password" value="jsh315518"></property>
+			value="jdbc:oracle:thin:@localhost:1521:orcl"></property>
+		<property name="username" value="scott"></property>
+		<property name="password" value="1234"></property>
 	</bean>
 
 	<!-- mybatis SqlSessionFactoryBean -->
@@ -34,8 +39,7 @@
 	</bean>
 
 	<bean id="sqlSession"
-		class="org.mybatis.spring.SqlSessionTemplate"
-		destroy-method="clearCache">
+		class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg name="sqlSessionFactory"
 			ref="sqlSessionFactory"></constructor-arg>
 	</bean>
